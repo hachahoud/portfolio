@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY','django-insecure-8ck&6e9%ii@i)4$
 # DEBUG = True
 DEBUG = os.environ.get('DJANGO_DEBUG','') != 'False'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["desolate-everglades-19003.herokuapp.com", '127.0.0.1']
 
 
 # Application definition
@@ -80,14 +80,14 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
-#from .postgres_pass import *
+#from .local_settings import *
 #postgres_password = my_dict['postgres_pass']
-postgres_password = ''
+postgres_password, postgres_user = ''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'project_portfolio',
-        'USER': 'postgres',
+        'USER': postgres_user,
         'PASSWORD': postgres_password,
         'HOST': 'localhost',
         'PORT': '',
