@@ -82,7 +82,7 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 #from .local_settings import *
 #postgres_password = my_dict['postgres_pass']
-postgres_password, postgres_user = ''
+postgres_password, postgres_user = '', ''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
