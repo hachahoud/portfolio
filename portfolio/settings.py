@@ -80,9 +80,9 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
-from .postgres_pass import *
-postgres_password = my_dict['postgres_pass']
-
+#from .postgres_pass import *
+#postgres_password = my_dict['postgres_pass']
+postgres_password = ''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
