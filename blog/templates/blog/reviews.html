@@ -1,0 +1,28 @@
+{% extends 'blog/base.html' %}
+
+
+
+{% block main %}
+
+
+<div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+  {% for entry in reviews %}
+  <div class="col">
+    <div class="card bg-dark border-success h-100">
+      <div class='ratio ratio-4x3'>
+        <img src="{{entry.film.picture.url}}" class="card-img-top bg-dark border-dark" alt="...">
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">{{entry.film}}</h5>
+        <p class="card-text">{{entry.text}}</p>
+      </div>
+      <div class="card-footer border-success">
+        <small class="text-muted">{{entry.date_added}}</small>
+      </div>
+    </div>
+  </div>
+  {% empty %}
+    <p>You don't have any entries yet!</p>
+  {% endfor %}
+</div>
+{% endblock main %}

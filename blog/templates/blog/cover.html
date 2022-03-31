@@ -1,0 +1,47 @@
+{% extends 'blog/base.html' %}
+{% load bootstrap5 %}
+
+{% block main %}
+
+<main class="px-3">
+  <h1>I'm Hamza Achahoud</h1>
+  <p class="lead">I'm a Web Developer and Cinema enthusiast. I write code for machines and film reviews for humans.</p>
+  <p class="lead">
+    <!--<a href="#" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Leave a message</a>
+    --><!-- Button trigger modal -->
+    <button type="button" class="btn btn-lg btn-secondary fw-bold border-white bg-white" data-bs-toggle="modal" data-bs-target="#messageModal">
+  Leave a message
+    </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="messageModal" tabindex="-1" aria-labelledby="messageModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <P class="modal-title text-dark" id="messageModalLabel">Leaving a message</p>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action='{% url "blog:message" %}' method='post' class='mb-3 text-muted'>
+            {% csrf_token %}
+            {% bootstrap_form message_form %}
+        </div>
+        <div class="modal-footer">
+          {% buttons %}
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-outline-primary">Save changes</button>
+          {% endbuttons %}
+        </div>
+      </form>
+      </div>
+    </div>
+  </div>
+
+  </p>
+
+<a href="https://www.linkedin.com/in/hamza-achahoud-a7a2a618b/" class="fa fa-linkedin"></a>
+<a href="https://twitter.com/hachahoud" class="fa fa-twitter"></a>
+<a href="https://github.com/hachahoud" class="fa fa-github"></a>
+</main>
+
+{% endblock main %}
